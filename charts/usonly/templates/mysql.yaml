@@ -19,7 +19,10 @@ spec:
             - containerPort: 3306
           env:
             - name: MYSQL_ROOT_PASSWORD
-              value: "{{ .Values.mysql.password }}"
+              valueFrom:
+                secretKeyRef:
+                  name: mysql-secret
+                  key: password
             - name: MYSQL_DATABASE
               value: "{{ .Values.mysql.database }}"
           volumeMounts:

@@ -24,7 +24,10 @@ spec:
             - name: SPRING_DATASOURCE_USERNAME
               value: "{{ .Values.mysql.username }}"
             - name: SPRING_DATASOURCE_PASSWORD
-              value: "{{ .Values.mysql.password }}"
+              valueFrom:
+                secretKeyRef:
+                  name: mysql-secret
+                  key: password
             - name: SPRING_PROFILES_ACTIVE
               value: "prod"
           volumeMounts:

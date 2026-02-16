@@ -15,4 +15,3 @@ mysql:
   port: 3306
   database: usonly
   username: root
-  password: "1234"
