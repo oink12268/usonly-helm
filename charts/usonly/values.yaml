@@ -6,9 +6,13 @@ image:
   pullPolicy: Always
 
 service:
-  type: NodePort
+  type: ClusterIP
   port: 8080
-  nodePort: 30080
+
+ingress:
+  enabled: true
+  host: usonly.iptime.org
+  tlsSecretName: usonly-tls
 
 mysql:
   host: mysql
