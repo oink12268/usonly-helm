@@ -11,7 +11,7 @@ service:
 
 ingress:
   enabled: true
-  host: usonly.iptime.org
+  host: usonly.duckdns.org
   tlsSecretName: usonly-tls
 
 mysql:
