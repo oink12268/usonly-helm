@@ -37,8 +37,8 @@ spec:
             - name: GEMINI_API_KEY
               valueFrom:
                 secretKeyRef:
-                  name: {{ .Values.gemini.secretName }}
-                  key: {{ .Values.gemini.secretKey }}
+                  name: "{{ .Values.gemini.secretName }}"
+                  key: "{{ .Values.gemini.secretKey }}"
           livenessProbe:
             tcpSocket:
               port: 8080
