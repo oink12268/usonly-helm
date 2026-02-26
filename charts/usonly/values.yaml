@@ -2,20 +2,20 @@ replicaCount: 1
 
 image:
   repository: oink12268/usonly
-  tag: "24"
+  tag: "15"
   pullPolicy: Always
 
 service:
-  type: ClusterIP
+  type: NodePort
   port: 8080
-
-ingress:
-  enabled: true
-  host: usonly.duckdns.org
-  tlsSecretName: usonly-tls
+  nodePort: 30080
 
 mysql:
   host: mysql
   port: 3306
   database: usonly
   username: root
+
+gemini:
+  secretName: gemini-secret
+  secretKey: api-key
