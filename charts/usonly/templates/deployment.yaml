@@ -22,7 +22,7 @@ spec:
             - name: TZ
               value: "Asia/Seoul"
             - name: SPRING_DATASOURCE_URL
-              value: "jdbc:mysql://{{ .Values.mysql.host }}:{{ .Values.mysql.port }}/{{ .Values.mysql.database }}?serverTimezone=Asia/Seoul&characterEncoding=UTF-8"
+              value: "jdbc:mariadb://{{ .Values.mysql.host }}:{{ .Values.mysql.port }}/{{ .Values.mysql.database }}?serverTimezone=Asia/Seoul&characterEncoding=UTF-8"
             - name: SPRING_DATASOURCE_USERNAME
               value: "{{ .Values.mysql.username }}"
             - name: SPRING_DATASOURCE_PASSWORD
@@ -32,8 +32,16 @@ spec:
                   key: password
             - name: SPRING_PROFILES_ACTIVE
               value: "prod"
-            - name: GOOGLE_APPLICATION_CREDENTIALS
-              value: "/etc/firebase/serviceAccountKey.json"
+          livenessProbe:
+            tcpSocket:
+              port: 8080
+            initialDelaySeconds: 60
+            periodSeconds: 15
+          readinessProbe:
+            tcpSocket:
+              port: 8080
+            initialDelaySeconds: 60
+            periodSeconds: 15
           volumeMounts:
             - name: firebase-key
               mountPath: /etc/firebase
