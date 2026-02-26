@@ -47,7 +47,7 @@ spec:
               memory: "128Mi"
               cpu: "100m"
             limits:
-              memory: "200Mi"
+              memory: "350Mi"
               cpu: "500m"
           volumeMounts:
             - name: mysql-data
