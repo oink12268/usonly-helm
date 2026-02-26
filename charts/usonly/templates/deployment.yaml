@@ -22,7 +22,7 @@ spec:
             - name: TZ
               value: "Asia/Seoul"
             - name: SPRING_DATASOURCE_URL
-              value: "jdbc:mariadb://{{ .Values.mysql.host }}:{{ .Values.mysql.port }}/{{ .Values.mysql.database }}?serverTimezone=Asia/Seoul&characterEncoding=UTF-8"
+              value: "jdbc:mysql://{{ .Values.mysql.host }}:{{ .Values.mysql.port }}/{{ .Values.mysql.database }}?serverTimezone=Asia/Seoul&characterEncoding=UTF-8"
             - name: SPRING_DATASOURCE_USERNAME
               value: "{{ .Values.mysql.username }}"
             - name: SPRING_DATASOURCE_PASSWORD
