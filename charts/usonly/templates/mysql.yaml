@@ -12,6 +12,7 @@ data:
     tmp_table_size = 16M
     max_heap_table_size = 16M
     table_open_cache = 64
+    performance_schema = OFF
 ---
 apiVersion: apps/v1
 kind: Deployment
