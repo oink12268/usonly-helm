@@ -19,6 +19,8 @@ spec:
           ports:
             - containerPort: 8080
           env:
+            - name: JAVA_TOOL_OPTIONS
+              value: {{ .Values.javaOpts | quote }}
             - name: TZ
               value: "Asia/Seoul"
             - name: SPRING_DATASOURCE_URL
