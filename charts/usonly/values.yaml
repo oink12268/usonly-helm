@@ -23,3 +23,5 @@ mysql:
 gemini:
   secretName: gemini-secret
   secretKey: api-key
+  
+javaOpts: "-Xms32m -Xmx128m -XX:MaxMetaspaceSize=100m -XX:+UseSerialGC"
