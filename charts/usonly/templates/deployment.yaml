@@ -41,6 +41,10 @@ spec:
                 secretKeyRef:
                   name: "{{ .Values.gemini.secretName }}"
                   key: "{{ .Values.gemini.secretKey }}"
+            - name: REDIS_HOST
+              value: "redis"
+            - name: REDIS_PORT
+              value: "6379"
           livenessProbe:
             tcpSocket:
               port: 8080
