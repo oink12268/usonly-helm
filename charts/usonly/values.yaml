@@ -23,5 +23,10 @@ mysql:
 gemini:
   secretName: gemini-secret
   secretKey: api-key
+
+pinecone:
+  secretName: pinecone-secret
+  apiKeySecretKey: api-key
+  indexHostSecretKey: index-host
   
 javaOpts: "-Xms48m -Xmx128m -XX:MaxMetaspaceSize=150m -XX:+UseSerialGC"
