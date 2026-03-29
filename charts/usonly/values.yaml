@@ -29,4 +29,4 @@ pinecone:
   apiKeySecretKey: api-key
   indexHostSecretKey: index-host
   
-javaOpts: "-Xms48m -Xmx128m -XX:MaxMetaspaceSize=150m -XX:+UseSerialGC"
+javaOpts: "-Xms64m -Xmx256m -XX:MaxMetaspaceSize=150m -XX:+UseSerialGC"
