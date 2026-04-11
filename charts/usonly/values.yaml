@@ -2,7 +2,7 @@ replicaCount: 1
 
 image:
   repository: oink12268/usonly
-  tag: "73"
+  tag: "74"
   pullPolicy: Always
 
 service:
